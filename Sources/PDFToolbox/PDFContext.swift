@@ -22,13 +22,13 @@ public class PDFContext {
         }
     }
     
-    public func beginPage(_ rect: CGRect = CGRect(origin: CGPoint.zero, size: PaperSize.A4)) {
+    public func beginPage(_ rect: CGRect = CGRect(origin: CGPoint.zero, size: PaperSize.a4.size)) {
         var mediaBox = rect
         context.beginPage(mediaBox: &mediaBox)
     }
     
-    public func beginPage(_ pageSize: CGSize = PaperSize.A4) {
-        beginPage(CGRect(origin: CGPoint.zero, size: pageSize))
+    public func beginPage(_ pageSize: PaperSize = .a4) {
+        beginPage(CGRect(origin: CGPoint.zero, size: pageSize.size))
     }
     
     public func endPage() {
